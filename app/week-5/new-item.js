@@ -20,7 +20,6 @@ export function Counter() {
       setCategory("produce");
       setName("");
       setQuantity(1);
-      
     };
     const increment = () => {
         if(quantity<20)
