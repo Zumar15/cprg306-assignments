@@ -46,7 +46,7 @@ export default function NewItem({onAddItem}){
     return(
         <>
         <form className="form" onSubmit={handleSubmit}>
-            <input className = "p-4 rounded-lg m-4 bg-green-300 w-48" id="name" type="text" value={name} placeholder="Item name" onChange={e =>setName(e.target.value)} required/>
+            <input className = "p-4 rounded-lg m-4 bg-green-300 w-48"id="name" type="text" value={name} placeholder="Item name" onChange={e =>setName(e.target.value)} required/>
             <div className="form-section-2">
         <div className="item-wrapper">
         <p className = "p-4 rounded-lg m-4 bg-purple-300 w-48">Count: {quantity}</p>

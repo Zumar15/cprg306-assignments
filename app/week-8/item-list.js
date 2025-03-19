@@ -3,7 +3,7 @@
 import Item from "./item"
 import { useState } from "react"
 
-const ItemList = ({items}) => {
+const ItemList = ({items, onItemSelect}) => {
     let newitems = [...items];
     let arr= '';
     const [sortBy, setSortBy] = useState("name")
@@ -48,7 +48,7 @@ const ItemList = ({items}) => {
             sortBy != "gcategory" ?
           
             newitems.map((item,i) => {
-                return <Item key={i} name={item.name} quantity={item.quantity} category={item.category}/>
+                return <Item onSelect = {onItemSelect} key={i} name={item.name} quantity={item.quantity} category={item.category}/>
             })
             : 
             arr.map((item,ii) => {
@@ -58,7 +58,7 @@ const ItemList = ({items}) => {
                     categoryItem = ca.map((t,i)=>{
                         return <Item key={i} name={t.name} quantity={t.quantity} category={t.category}/>
                     })
-             return <div key={ii}><h2 className="h2" >{item}</h2>{categoryItem}</div>   
+             return <div key={ii} className="grid"><h2 className="h2" >{item}</h2>{categoryItem}</div>   
             })
             
         }

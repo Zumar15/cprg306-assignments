@@ -1,26 +1,25 @@
 "use client"
-import {Counter} from "./new-item.js";
-import {ItemList} from "./item-list.js";
+import React from "react"
 import itemsData from "./items.json"
+import ItemList from "./item-list"
+import NewItem from "./new-item"
+import { useState } from "react"
 
-export default function Page() {
-    const [items, setItems] = useState(itemsData);
-    const [name, setName] = useState("");
-    const [quantity, setQuantity] = useState(0);
-    const [category, setCategory] = useState("");
-    const handleAddItem = () => {
-      const newItem = {
-        "name":name,
-        "quantity":quantity,
-        "category":category
-      }
-      const newItems = [...items,newItem]
-        setItems(newItems);
+export default function Page(){
+    const [items, setItems] = useState(itemsData)
+    
+    const handleAddItem = (obj) => { 
+        const newitems = [...items]
+        newitems.push(obj)
+        setItems(newitems)
     }
-    return (
-      <main>
-        <Counter onAddItem ={handleAddItem} name quantity category></Counter>
-        <ItemList item = "items"/>
-      </main>
-    );
-  }
+
+    return(
+        <main className="main">
+            <h1>Shopping List</h1>
+            <NewItem onAddItem={handleAddItem}/>
+            <p></p>
+            <ItemList items={items}/>
+        </main>
+    )
+}
