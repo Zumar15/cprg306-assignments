@@ -11,6 +11,7 @@ export default function Page() {
       <Link className = "p-4 rounded-lg m-4 bg-green-300 w-48" href="/week-6"> Week 6</Link>
       <Link className = "p-4 rounded-lg m-4 bg-pink-300 w-48" href="/week-7"> Week 7</Link>
       <Link className = "p-4 rounded-lg m-4 bg-teal-300 w-48" href="/week-8"> Week 8</Link>
+      <Link className = "p-4 rounded-lg m-4 bg-yellow-300 w-48" href="/week-9"> Week 9</Link>
     </div>
   );
 }
